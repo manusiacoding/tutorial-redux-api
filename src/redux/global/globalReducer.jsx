@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const globalAdoption = createSlice({
     name: "global",
     initialState: {
-        counter: 0
+        counter: 0,
+        dataAPI: []
     },
     reducers: {
         setIncrement: (state) => {
@@ -19,6 +20,9 @@ export const globalAdoption = createSlice({
         setDecrementByAmount: (state, action) => {
             if(state.counter === 0) alert('ASYNC GABISA DIKURANGIN LAGI WOI')
             else state.counter -= action.payload
+        },
+        setDataAPI: (state, action) => {
+            state.dataAPI.push(action.payload)
         }
     }
 })
